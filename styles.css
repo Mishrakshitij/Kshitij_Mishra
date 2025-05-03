@@ -52,7 +52,7 @@ header {
     /* Replace 'path/to/your/image.jpg' with the actual path to your chosen image */
     /* Example: ../img/header-background.jpg if styles.css is in a css folder */
     /* Example: img/header-background.jpg if styles.css is in the root with index.html */
-    background-image: linear-gradient(rgba(0, 63, 92, 0.75), rgba(0, 63, 92, 0.75)), url('img/header-background.jpg'); /* <<< UPDATE IMAGE PATH HERE */
+    background-image: linear-gradient(rgba(0, 63, 92, 0.75), rgba(0, 63, 92, 0.75)), url('img/kshitij_websit_cover_image.jpg'); /* <<< UPDATE IMAGE PATH HERE */
 
     background-size: cover; /* Cover the entire header area */
     background-position: center center; /* Center the image */
