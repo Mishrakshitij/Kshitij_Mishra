@@ -1,31 +1,89 @@
-body {
-    font-family: Arial, sans-serif;
-    line-height: 1.6;
-    margin: 0;
-    padding: 0;
-    background-color: #f4f4f4;
-    color: #333;
+/* Import a nice font from Google Fonts */
+@import url('https://fonts.googleapis.com/css2?family=Lato:wght@400;700&family=Poppins:wght@400;600&display=swap');
+
+/* --- Variables --- */
+:root {
+    --primary-color: #005f73; /* A professional teal/blue */
+    --secondary-color: #0a9396; /* Lighter shade for accents/hover */
+    --background-color: #f8f9fa; /* Lighter gray background */
+    --section-background: #ffffff; /* White for content sections */
+    --text-color: #343a40; /* Dark gray for text */
+    --heading-color: #003f5c; /* Darker blue for headings */
+    --light-text-color: #f8f9fa; /* Light text for dark backgrounds */
+    --border-color: #e9ecef; /* Light border color */
+    --shadow-color: rgba(0, 0, 0, 0.08);
 }
 
+/* --- Global Styles --- */
+body {
+    font-family: 'Lato', sans-serif; /* Use Lato for body text */
+    line-height: 1.7;
+    margin: 0;
+    padding: 0;
+    background-color: var(--background-color);
+    color: var(--text-color);
+    font-size: 16px; /* Base font size */
+}
+
+h1, h2, h3 {
+    font-family: 'Poppins', sans-serif; /* Use Poppins for headings */
+    color: var(--heading-color);
+    margin-top: 0;
+}
+
+a {
+    color: var(--primary-color);
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+a:hover {
+    color: var(--secondary-color);
+    text-decoration: underline;
+}
+
+ul {
+    list-style: disc; /* Use standard bullets */
+    padding-left: 25px; /* Indent lists */
+}
+
+/* --- Header --- */
 header {
-    background: #333;
-    color: #fff;
-    padding: 10px 0;
+    background: var(--heading-color);
+    color: var(--light-text-color);
+    padding: 1.5rem 1rem; /* Use rem units */
     text-align: center;
+    box-shadow: 0 2px 5px var(--shadow-color);
 }
 
 header h1 {
     margin: 0;
-    font-size: 2.5em;
+    font-size: 2.8rem; /* Slightly larger */
+    font-weight: 600; /* Poppins bold */
+}
+
+header p {
+    margin: 0.5rem 0 0;
+    font-size: 1.1rem;
+    color: #ced4da; /* Lighter text for subtitle */
+}
+
+/* --- Navigation --- */
+nav {
+    background: var(--primary-color);
+    position: sticky; /* Make nav stick to top */
+    top: 0;
+    z-index: 1000; /* Ensure it's above other content */
+    box-shadow: 0 2px 5px var(--shadow-color);
 }
 
 nav ul {
-    background: #444;
     list-style: none;
     margin: 0;
     padding: 0;
     display: flex;
     justify-content: center;
+    flex-wrap: wrap; /* Allow wrapping on small screens */
 }
 
 nav ul li {
@@ -33,66 +91,158 @@ nav ul li {
 }
 
 nav ul li a {
-    color: #fff;
-    text-decoration: none;
-    padding: 10px 20px;
+    color: var(--light-text-color);
+    padding: 0.8rem 1.5rem; /* Adjust padding */
     display: block;
+    text-transform: uppercase; /* Optional: makes it look more like a nav bar */
+    font-weight: 700; /* Lato bold */
+    font-size: 0.9rem;
+    text-decoration: none; /* Remove underline from nav links */
+    transition: background-color 0.3s ease, color 0.3s ease;
 }
 
 nav ul li a:hover {
-    background: #555;
+    background: var(--secondary-color);
+    color: var(--light-text-color); /* Keep text light on hover */
+    text-decoration: none; /* No underline on hover */
 }
 
+/* --- Main Content --- */
 main {
-    padding: 20px;
+    padding: 2rem;
+    max-width: 900px; /* Limit width for readability */
+    margin: 2rem auto; /* Center main content */
 }
 
 main section {
-    margin-bottom: 20px;
-    background: #fff;
-    padding: 20px;
+    margin-bottom: 2.5rem; /* Increased spacing between sections */
+    background: var(--section-background);
+    padding: 2rem; /* Increased padding inside sections */
     border-radius: 8px;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 4px 12px var(--shadow-color); /* Softer, slightly larger shadow */
+    border: 1px solid var(--border-color); /* Subtle border */
 }
 
-/* About Me Section */
+main section h2 {
+    font-size: 1.8rem;
+    margin-bottom: 1.5rem;
+    padding-bottom: 0.5rem;
+    border-bottom: 2px solid var(--primary-color); /* Add underline to section titles */
+    display: inline-block; /* Make border only span the text width */
+}
+
+/* --- About Me Section --- */
 .about-container {
     display: flex;
-    flex-wrap: wrap;
+    flex-wrap: wrap; /* Allow wrapping */
     align-items: center;
-    justify-content: space-between;
+    gap: 2rem; /* Spacing between text and photo */
 }
 
 .about-text {
-    flex: 1;
-    margin-right: 20px;
+    flex: 1; /* Allow text to take available space */
+    min-width: 300px; /* Prevent text becoming too narrow */
 }
 
 .about-photo {
-    flex: 0 0 150px;
-    text-align: right;
+    flex: 0 0 180px; /* Slightly larger photo */
+    text-align: center; /* Center photo if it wraps below */
 }
 
 .profile-photo {
     max-width: 100%;
     border-radius: 50%;
+    border: 4px solid var(--section-background); /* White border */
+    box-shadow: 0 4px 10px var(--shadow-color);
 }
 
 /* Links for CV and Research Statement */
 .about-text p a {
-    color: #007BFF;
-    text-decoration: none;
-    font-weight: bold;
+    font-weight: 700; /* Bold links */
+    margin-right: 10px; /* Space between links */
 }
 
-.about-text p a:hover {
-    text-decoration: underline;
+/* --- Research & Publications Section --- */
+#research ul, #publications ul {
+    margin-top: 1rem;
+    padding-left: 20px; /* Slightly less indent for these lists */
 }
 
-/* Footer */
+#research li, #publications li {
+    margin-bottom: 0.8rem; /* Space out list items */
+}
+
+#publications h3 {
+    margin-top: 1.5rem;
+    margin-bottom: 1rem;
+    font-size: 1.3rem;
+    color: var(--primary-color);
+}
+
+#publications p {
+    margin-bottom: 1.5rem;
+    font-style: italic; /* Italicize the note */
+    color: #6c757d; /* Muted color for the note */
+}
+
+#publications li b { /* Style the bolded titles */
+    color: var(--heading-color);
+}
+
+#publications li i { /* Style the italicized venues */
+    color: #495057; /* Slightly lighter than main text */
+}
+
+/* --- Contact Section --- */
+#contact p {
+    margin-bottom: 0.5rem; /* Tighter spacing for contact info */
+}
+
+#contact a {
+    font-weight: 600; /* Make contact links slightly bolder */
+}
+
+/* --- Footer --- */
 footer {
     text-align: center;
-    padding: 10px;
-    background: #333;
-    color: #fff;
+    padding: 1.5rem;
+    margin-top: 2rem;
+    background: var(--heading-color);
+    color: var(--light-text-color);
+    font-size: 0.9rem;
+}
+
+/* --- Responsive Design --- */
+@media (max-width: 768px) {
+    header h1 {
+        font-size: 2.2rem;
+    }
+    header p {
+        font-size: 1rem;
+    }
+    nav ul {
+        justify-content: space-around; /* Better spacing on smaller screens */
+    }
+    nav ul li a {
+        padding: 0.8rem 1rem; /* Reduce padding */
+    }
+    main {
+        padding: 1rem;
+        margin: 1rem auto;
+    }
+    main section {
+        padding: 1.5rem;
+    }
+    .about-container {
+        flex-direction: column; /* Stack text and photo */
+        align-items: center; /* Center items when stacked */
+    }
+    .about-text {
+        margin-right: 0; /* Remove margin when stacked */
+        text-align: center; /* Center text */
+        margin-bottom: 1.5rem;
+    }
+    .about-photo {
+        flex-basis: 150px; /* Slightly smaller photo on mobile */
+    }
 }
