@@ -49,23 +49,39 @@ ul {
 
 /* --- Header --- */
 header {
-    background: var(--heading-color);
+    /* Replace 'path/to/your/image.jpg' with the actual path to your chosen image */
+    /* Example: ../img/header-background.jpg if styles.css is in a css folder */
+    /* Example: img/header-background.jpg if styles.css is in the root with index.html */
+    background-image: linear-gradient(rgba(0, 63, 92, 0.75), rgba(0, 63, 92, 0.75)), url('img/header-background.jpg'); /* <<< UPDATE IMAGE PATH HERE */
+
+    background-size: cover; /* Cover the entire header area */
+    background-position: center center; /* Center the image */
+    background-repeat: no-repeat;
     color: var(--light-text-color);
-    padding: 1.5rem 1rem; /* Use rem units */
+    padding: 5rem 1rem; /* Increased padding for more impact */
     text-align: center;
-    box-shadow: 0 2px 5px var(--shadow-color);
+    position: relative; /* Needed for potential future pseudo-elements if desired */
+    /* Remove the solid background color and box-shadow if previously set directly */
+    /* box-shadow: 0 2px 5px var(--shadow-color); If you still want a shadow, keep it */
 }
 
 header h1 {
-    margin: 0;
-    font-size: 2.8rem; /* Slightly larger */
-    font-weight: 600; /* Poppins bold */
+    margin: 0 0 0.5rem 0; /* Added bottom margin */
+    font-size: 3.2rem; /* Slightly larger heading too */
+    font-weight: 600;
+    text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.5); /* Subtle shadow for readability */
 }
 
 header p {
-    margin: 0.5rem 0 0;
-    font-size: 1.1rem;
-    color: #ced4da; /* Lighter text for subtitle */
+    margin: 0;
+    font-size: 1.4rem; /* <<< INCREASED FONT SIZE */
+    color: #e9ecef; /* Slightly brighter light text */
+    font-weight: 400; /* Regular weight might look better when larger */
+    line-height: 1.5; /* Adjust line height for readability */
+    max-width: 800px; /* Prevent subtitle from becoming too wide */
+    margin-left: auto; /* Center the paragraph if max-width applies */
+    margin-right: auto; /* Center the paragraph if max-width applies */
+    text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.4); /* Subtle shadow for readability */
 }
 
 /* --- Navigation --- */
