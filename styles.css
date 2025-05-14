@@ -74,7 +74,7 @@ header h1 {
 */
 header p {
     margin: 0;
-    font-size: 1.4rem; /* <<< INCREASED FONT SIZE */
+    font-size: 1.8rem; /* <<< INCREASED FONT SIZE */
     color: #e9ecef; /* Slightly brighter light text */
     font-weight: 400; /* Regular weight might look better when larger */
     line-height: 1.5; /* Adjust line height for readability */
